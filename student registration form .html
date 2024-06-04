@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <style>
+           h1{
+                color:rgb(37, 35, 35);
+            }
+        form{
+            color: rgb(32, 38, 216);
+            width:60%;
+            margin: auto;
+            font-size: large;
+            background-color: blanchedalmond;
+            
+        }
+        label{
+            width: 240px;
+            display: inline-block;
+            text-align: center;
+            padding: 20px;
+        }
+        td,th,table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            background-color: blanchedalmond;
+
+        }
+        .state{
+            width: 167px;
+        }
+        .city{
+            width:168px;
+        }
+        .address{
+            width: 167px;
+
+        }
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            width: 100%;
+        }
+        .dropdown-item {
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+        .dropdown-item:hover {
+            background-color: #f1f1f1;
+        }
+        .selected-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .selected-item {
+            background-color: #e1e1e1;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .selected-item span {
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        </style>
+        <title>student registration form</title>
+    </head>
+    <body>
+        <form>
+            <center><h1><mark>STUDENT REGISTRATION FORM</mark></h1></center>
+            <h1><center><q><abbr title="AVINASHILINGAM">AVINUTY</abbr> INSTITUTION FORM</q></center></h1>
+            <center><a href="C:\Users\kamal\OneDrive\Desktop\rules.asp" target="_blank">This is a link for rules</a><br></center><br>
+    
+            <label>First Name</label>
+            <input type="text" id="first-name" placeholder="Maximum 20 letters A-Z" maxlength="20" required><br>
+    
+            <label>Last Name</label>
+            <input type="text" id="last-name" placeholder="Maximum 20 letters A-Z" maxlength="20" required><br>
+    
+            <label>Guardian</label>
+            <input type="text" id="guardian" placeholder="Maximum 20 letters A-Z" maxlength="20"><br>
+    
+            <label>DOB</label>
+            <input type="date" name="dob" id="dob" style="width: 165px;"><br>
+    
+            <label>Email</label>
+            <input type="email" placeholder="example *****@gmail.com" id="email-id" size="20"><br>
+    
+            <label>Password</label>
+            <input type="password" name="password" size="20"><br>
+    
+            <label>Phone Number</label>
+            <select>
+                <option value="91(india)" selected>+91</option>
+                <option value="44(uk)">+44</option>
+                <option value="+1(usa)">+1</option>
+            </select>
+            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" size="13"/><br>
+            <label>Gender</label>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <input type="radio" name="gender" value="other"> Other<br>
+    
+            <label id="address">Address</label>
+             <textarea id="address" class="address"></textarea><br>
+    
+            <label>State</label>
+            <select id="state" class="state">
+                <option>select state</option>
+                <option value="mp" >MP</option>
+                <option value="up">UP</option>
+                <option value="kerala">Kerala</option>
+                <option value="tamilnadu">Tamil Nadu</option>
+            </select><br>
+            <label>City</label>
+            <select id="select" class="city">
+                <option>select state</option>
+                <option value="coimbatore">Coimbatore</option>
+                <option value="erode">Erode</option>
+                <option value="salem">Salem</option>
+                <option value="chennai">Chennai</option>
+            </select><br>
+            <label>Pincode</label>
+            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" size="20"/><br>
+    
+            <label>Aadhar Card</label>
+            <input type="file" id="file"name="aadhar_card"><br>
+    
+            <label>Courses Available (choose any one)</label>
+            <input type="checkbox" id="course1" name="course1" value="CSE"checked> CSE
+            <input type="checkbox" id="course2" name="course2" value="AI&DS"> AI&DS
+            <input type="checkbox" id="course3" name="course3" value="BMIE"> BMIE
+            <input type="checkbox" id="course4" name="course4" value="ECE"> ECE
+            <input type="checkbox" id="course5" name="course5" value="CIVIL"> CIVIL<br>
+            <label>Area of insterest</label>
+            <div class="dropdown-container">
+                <input type="text" id="multiSelectInput" placeholder="Select options" readonly>
+                <div class="dropdown" id="dropdown">
+                    <label class="dropdown-item">
+                        <input type="checkbox" value="java"> java
+                    </label>
+                    <label class="dropdown-item">
+                        <input type="checkbox" value="c++"> c++
+                    </label>
+                    <label class="dropdown-item">
+                        <input type="checkbox" value="c"> c 
+                    </label>
+                    <label class="dropdown-item">
+                        <input type="checkbox" value="pythhon"> python 
+                    </label>
+                </div>
+            </div>
+            <input type="hidden" name="selectedOptions" id="selectedOptions"><br>
+            <label>12th Marksheet</label>
+            <input type="file"  name="12thmarksheet"accept="image/jpeg,image/png"><br>
+    
+            <label>10th Marksheet</label>
+            <input type="file"><br>
+            <label>Photo</label>
+            <input type="file" id="file-input" multiple> You can only upload 3 files<br>
+            <label>Fill the details below</label>           
+            <table align="center" id="myTable" cellpadding="5" cellspacing="5" border="1">
+                <thead>
+                    <tr>
+                        <th>School</th>
+                        <th>Board</th>
+                        <th>Year of Passing</th>
+                        <th><button type="button" onclick="addRow()">+</button></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="school[]"></td>
+                        <td><input type="text" name="board[]"></td>
+                        <td><input type="text" name="yearofpassing[]"></td>
+    
+                </tr>
+                </tbody>
+            </table>
+            <label>Declaration</label>
+
+            <center>
+                <input type="checkbox"> The proof submitted was true to your knowledge. If any illegal activities are found, actions will be taken.
+            </center><br>
+
+            <center><input type="submit" style="background-color: chartreuse;"><br></center>
+            <p>If any error, mail to <a href="mailto:kamalimeenashi@gmail.com">this mail</a></p>
+        </form>
+    
+        <script>
+            function addRow() {
+            var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow();
+            newRow.innerHTML = `
+                <td><input type="text" name="school[]"></td>
+                <td><input type="text" name="board[]"></td>
+                <td><input type="text" name="yearofpassing[]"></td>
+                <td><button type="button" onclick="removeRow(this)">X</button></td>
+            `;
+        };
+        document.getElementById('file-input').addEventListener('change', function() {
+                const maxFiles = 3;
+                if (this.files.length > maxFiles) {
+                    alert('You can only upload up to ' + maxFiles + ' files.');
+                    this.value = ''; 
+                }
+            });
+        function removeRow(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        };
+      const uploadField = document.getElementById("file");
+
+uploadField.onchange = function() {
+    if(this.files[0].size >1){
+       alert("File is too big!");
+       this.value = "";
+    };
+}; 
+document.addEventListener('DOMContentLoaded', () => {
+            const input = document.getElementById('multiSelectInput');
+            const dropdown = document.getElementById('dropdown');
+            const form = document.getElementById('multiSelectForm');
+            const hiddenInput = document.getElementById('selectedOptions');
+
+            input.addEventListener('click', () => {
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.dropdown-container')) {
+                    dropdown.style.display = 'none';
+                }
+            });
+
+            const updateSelectedItems = () => {
+                const selectedCheckboxes = document.querySelectorAll('.dropdown-item input:checked');
+                const selectedValues = Array.from(selectedCheckboxes).map(checkbox => checkbox.value);
+                input.value = selectedValues.join(', ');
+                hiddenInput.value = selectedValues.join(',');
+            };
+
+            dropdown.addEventListener('change', (e) => {
+                if (e.target.tagName === 'INPUT') {
+                    updateSelectedItems();
+                }
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Selected values: ' + hiddenInput.value);
+            });
+        });
+
+</script>
+    </body>
+    </html>
